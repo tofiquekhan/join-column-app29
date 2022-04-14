@@ -12,8 +12,10 @@
 <property name="show_sql">true</property>
 <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 <property name="hbm2ddl.auto">update</property>
-<mapping resource="myproject/jointable/resources/Payment.hbm.xml"/>
-
-
+<!-- <mapping resource="myproject/jointable/resources/Payment.hbm.xml"/>
+ -->
+<mapping class="myproject.jointable.entity.Payment"/>
+<mapping class="myproject.jointable.entity.CardPayment"/>
+<mapping class="myproject.jointable.entity.ChequePayment"/>
 </session-factory>
 </hibernate-configuration>
