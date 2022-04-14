@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="myproject.jointable.entity.Payment" table="payment">
+	<id name="txId"/>
+	<property name="payDate"/>
+	<property name="payAmt"/>
+	<joined-subclass name="myproject.jointable.entity.CardPayment" table="card_payment">
+	<key column="txId"/>
+	<property name="cardNo"/>
+	<property name="exrDate"/>
+	</joined-subclass>
+<joined-subclass name="myproject.jointable.entity.ChequePayment" table="cheque_payment">
+	<key column="txId"/>
+	<property name="chequeNo"/>
+	<property name="accNo"/>
+</joined-subclass>	
+	
+	
+	</class>
+
+
+
+</hibernate-mapping>
